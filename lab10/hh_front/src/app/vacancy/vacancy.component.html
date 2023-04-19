@@ -1,0 +1,25 @@
+<!--<p>vacancy works!</p>-->
+<fieldset>
+  <p>Add vacancy</p>
+  <label>Name</label>
+  <input type="text" [(ngModel)]="newName">
+  <label>Description</label>
+  <input type="text" [(ngModel)]="newDesc">
+  <label>Company_id</label>
+  <input type="text" [(ngModel)]=company_idd>
+  <label>Salary</label>
+  <input type="text" [(ngModel)]=salary>
+  <button (click)="addVacancy()">Add</button>
+</fieldset>
+<div id="vacancies">
+  <h1>Vacancies</h1>
+  <p *ngIf="loading">Loading...</p>
+  <ul>
+    <li *ngFor="let vacancy of vacancies">
+      <h2>{{ vacancy.name }}</h2>
+      <div class="btn">
+        <button (click)="viewDetails(vacancy)">View Details</button>
+      </div>
+    </li>
+  </ul>
+</div>
